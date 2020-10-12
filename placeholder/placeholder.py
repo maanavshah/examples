@@ -44,7 +44,7 @@ settings.configure(
 from django import forms
 from django.conf.urls import url
 from django.core.cache import cache
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.core.wsgi import get_wsgi_application
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.shortcuts import render
@@ -95,7 +95,7 @@ def placeholder(request, width, height):
 
 
 def index(request):
-    example = reverse('placeholder', kwargs={'width': 50, 'height':50})
+    example = reverse('placeholder', kwargs={'width': 500, 'height':500})
     context = {
         'example': request.build_absolute_uri(example)
     }
